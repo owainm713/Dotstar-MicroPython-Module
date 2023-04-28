@@ -26,17 +26,20 @@ dots = DotStar(sdo = 19, clk = 18, numLEDs = 64, brightness = 3,  baudrate = 100
 #set all LEDS to the same colour
 
 dots.fill((150,0,0,-1)) - # set all LEDS to red at default brightness
+
 dots.show()   
     
 #set individual leds or range of leds
 
 dots[0] = (0, 150, 0, 5)
+
 dots[8:15] = [(0, 0, 150, -1)] * 8 
+
 dots.show()  
         
  #change default brightness to 15
  
- dots.brightness = 15 
+dots.brightness = 15 
 
 #show using a different brightness level
 
@@ -49,6 +52,7 @@ print(dots[31])
 #methods to turning LEDS off
 
 dots.fill((0,0,0,0))
+
 dots.show()
 
 #or     
