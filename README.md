@@ -3,6 +3,7 @@ Micropython module to use Dotstar tri-colour LEDs, Testing done with a Pi Pico m
 
 created Apr 25, 2023
 modified Apr 27, 2023
+modified Apr 23, 2024
 
 Connections to the Dotstar grid/string are as follows:
 - Pi Pico VBUS – Dotstar Vin (+5V connection)
@@ -21,7 +22,7 @@ brightness hierachy
 
 #initialize dotstar object
 
-dots = DotStar(sdo = 19, clk = 18, numLEDs = 64, brightness = 3,  baudrate = 1000000, auto_write = False)
+dots = DotStar(sdo = 19, clk = 18, numLEDs = 64, brightness = 3, spiBus = 0, baudrate = 1000000, auto_write = False)
     
 #set all LEDS to the same colour
 

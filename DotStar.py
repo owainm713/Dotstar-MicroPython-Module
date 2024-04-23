@@ -3,7 +3,8 @@ micropython version
 
 created February 10, 2023
 modified February 11, 2023
-modified April 24, 2023"""
+modified April 24, 2023
+modified April 23, 2024"""
 
 """
 Copyright 2023 Owain Martin
@@ -27,12 +28,12 @@ import utime as time
 
 class DotStar:
     
-    def __init__(self, sdo, clk, numLEDs, brightness = 3, baudrate = 1000000, auto_write = False):
+    def __init__(self, sdo, clk, numLEDs, brightness = 3, spiBus = 0, baudrate = 1000000, auto_write = False):
         
         # set up SPI connection details
         self.sdo = machine.Pin(sdo)
         self.clk = machine.Pin(clk)        
-        self.spi = machine.SPI(0, baudrate = baudrate, sck= self.clk, mosi = self.sdo)
+        self.spi = machine.SPI(spiBus, baudrate = baudrate, sck= self.clk, mosi = self.sdo)
         
         # initialize list to hold individual LED colour & brightness details
         # initially set to all off and default brightness (as indicated by the -1)
